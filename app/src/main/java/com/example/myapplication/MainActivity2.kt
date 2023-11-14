@@ -2,7 +2,6 @@ package com.example.myapplication
 
 import android.content.Context
 import android.os.Bundle
-import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.EditText
@@ -21,7 +20,7 @@ class MainActivity2 : AppCompatActivity() {
         val r3 = findViewById<RadioButton>(R.id.multi)
         val r4 = findViewById<RadioButton>(R.id.div)
         val tv1 = findViewById<TextView>(R.id.resultado)
-        val button = findViewById<Button>(R.id.boton)
+        val button = findViewById<Button>(R.id.boton1)
         button.setOnClickListener {
             if (r1.isChecked)
                 tv1.text = "Resultado: ${et1.text.toString().toInt() + et2.text.toString().toInt()}"
