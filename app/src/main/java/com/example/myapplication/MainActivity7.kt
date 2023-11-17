@@ -29,19 +29,24 @@ class MainActivity7 : AppCompatActivity() {
             val nombreUsuario = et1.text.toString()
             val contraseña = et2.text.toString()
 
-            val usuarioValido = usuarios.any { it.nombre == nombreUsuario && it.contraseña == contraseña }
+            val usuarioValido =
+                usuarios.any { it.nombre == nombreUsuario && it.contraseña == contraseña }
 
             if (nombreUsuario.isEmpty() || contraseña.isEmpty()) {
                 Toast.makeText(this, "Los campos no pueden quedar vacíos", Toast.LENGTH_LONG).show()
             } else if (usuarioValido) {
-                // Inicio de sesión exitoso, abrir MainActivity6
                 val intent = Intent(this, MainActivity6::class.java)
                 startActivity(intent)
             } else {
-                Toast.makeText(this, "Nombre de usuario o contraseña incorrectos", Toast.LENGTH_LONG).show()
+                Toast.makeText(
+                    this,
+                    "Nombre de usuario o contraseña incorrectos",
+                    Toast.LENGTH_LONG
+                ).show()
             }
         }
     }
 
-    data class Usuario(val nombre: String, val contraseña: String)
+    data class Usuario(val nombre: String, val contraseña: String) {
+    }
 }
